@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | ChillNWatch</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand cnw">Chill<span class="cnwn">N</span>Watch</a>
+        <div class="navbar-links">
+          <a href="./Movies.html">Movies</a>
+          <a href="./Login.html" >Login</a>/<a href="./Register.html" style="margin-left: 0 ;">Sign up</a><a href="./Profile.html" style="margin-left: 0 ;">Profile</a>
+        </div>
+    </nav>
+
+  <div class="login-wrapper">
+    <div class="login-box">
+      <h2>Sign up</h2>
+      <form onsubmit="handleLogin(event)">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+
+        <label for="password">Confirm Password</label>
+        <input type="password" id="password" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer-container">
+    <div class="footer-left">
+      <a href="#home" class="footer-link">Home</a>
+      <a href="#about" class="footer-link">About</a>
+      <a href="#contact" class="footer-link">Contact</a>
+    </div>
+    <div class="footer-right">
+      <div class="trademark">
+        <p>&copy; 2025 ChillNWatch™. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
