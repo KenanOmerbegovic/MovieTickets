@@ -2,7 +2,33 @@ body {
     margin: 0;
     padding: 0;
   }
-  s
+  #spapp {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main#spapp > section {
+    flex: 1;
+    padding: 60px 10px 10px 10px;
+    background: var(--background-color);
+  }
+  
+  main#spapp > section#error_404 {
+    background: #000000;
+    color: var(--text-color-white);
+  }
+  
+  main#spapp h1 {
+    font-size: 4.2rem;
+    line-height: 110%;
+    margin: 2.1rem 0 1.68rem 0;
+    text-align: center;
+  }
+
+
+
   .navbar,
   .footer-container {
     width: 100%;

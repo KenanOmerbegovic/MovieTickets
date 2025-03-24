@@ -5,32 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ChillNWatch</title>
   <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/spapp.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/spapp.min.js"></script>
 </head>
 <body>
 
   <nav class="navbar">
-    <a href="#" class="navbar-brand cnw">Chill<span class="cnwn">N</span>Watch</a>
+    <a href="#main" class="navbar-brand cnw">Chill<span class="cnwn">N</span>Watch</a>
     <div class="navbar-links">
-      <a href="./pages/Movies.html">Movies</a>
-      <a href="./pages/Login.html" >Login</a>/<a href="./pages/Register.html" style="margin-left: 0 ;">Sign up</a><a href="./pages/Profile.html" style="margin-left: 0 ;">Profile</a>
+      <a href="#Movies">Movies</a>
+      <a href="#Login" >Login</a>/<a href="#Register" style="margin-left: 0 ;">Sign up</a><a href="#Profile" style="margin-left: 0 ;">Profile</a>
     </div>
   </nav>
 
-  <div class="pane-grid">
-    <a class="pane pane-left" href="./pages/Reservation.html"><div>Left Pane</div></a>
-  
-    <div class="center-panes">
-      <a class="pane center-pane" href="./pages/Reservation.html"><div>Middle Pane 1</div></a>
-      <a class="pane center-pane" href="./pages/Reservation.html"><div>Middle Pane 2</div></a>
-      <a class="pane center-pane" href="./pages/Reservation.html"><div>Middle Pane 3</div></a>
-    </div>
-  
-    <a class="pane pane-right" href="./pages/Reservation.html"><div>Right Pane</div></a>
-  </div>
+  <main id="spapp" role="main">
+    <section id="main"></section>
+    <section id="Login"></section>
+    <section id="Movies"></section>
+    <section id="Register"></section>
+    <section id="Reservation"></section>
+    <section id="Profile"></section>
+    <section id="error_404"><h1>Error 404</h1></section>
+  </main>
   
   <div class="footer-container">
     <div class="footer-left">
-      <a href="#home" class="footer-link">Home</a>
+      <a href="#main" class="footer-link">Home</a>
       <a href="#about" class="footer-link">About</a>
       <a href="#contact" class="footer-link">Contact</a>
     </div>
@@ -40,65 +41,11 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // Simulated data
-    const data = {
-      text: "Pane Title Here",
-      resizable: true,
-      collapsible: true,
-      size: "medium",
-      minSize: "small",
-      maxSize: "large",
-      collapsedSize: "tiny",
-    };
-
-    const dimensionOptions = new Set(['size', 'minSize', 'maxSize', 'collapsedSize']);
-
-    function getStateText(data) {
-      if (data.resizable !== false && !data.collapsible) {
-        return 'Resizable only';
-      }
-      const resizableText = data.resizable ? 'Resizable' : 'Non-resizable';
-      const collapsibleText = data.collapsible ? 'collapsible' : 'non-collapsible';
-      return `${resizableText} and ${collapsibleText}`;
-    }
-
-    function renderPane() {
-      document.getElementById("pane-title").textContent = data.text;
-      document.getElementById("pane-state").textContent = getStateText(data);
-
-      const filtered = Object.fromEntries(
-        Object.entries(data).filter(([key]) => dimensionOptions.has(key))
-      );
-
-      const optionsContainer = document.getElementById("pane-options");
-      optionsContainer.innerHTML = '';
-
-      for (const [key, value] of Object.entries(filtered)) {
-        const div = document.createElement('div');
-        div.className = 'pane-option';
-        div.textContent = `${key}: ${value}`;
-        optionsContainer.appendChild(div);
-      }
-    }
-
-    function onHomeClick(event) {
-      event.preventDefault();
-      console.log('Home link clicked');
-    }
-
-    function onAboutClick(event) {
-      event.preventDefault();
-      console.log('About link clicked');
-    }
-
-    function onContactClick(event) {
-      event.preventDefault();
-      console.log('Contact link clicked');
-    }
-
-    renderPane();
-  </script>
+  <script
+      src="https://code.jquery.com/jquery-3.1.0.min.js"
+      integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+      crossorigin="anonymous"
+    ></script>
+  <script src="assets/js/custom.js"></script>
 </body>
 </html>
